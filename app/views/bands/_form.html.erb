@@ -1,0 +1,12 @@
+<%= form_with(model: @band, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Band Name", class: "input-field" %> 
+  </div>
+  <div class="field">
+    <%= f.label :genre %>
+    <%= f.text_field :genre, required: true, placeholder: "Genre", class: "input-field" %>
+  </div>
+  <a class="waves-effect waves-light btn-small grey lighten-3"><%= f.submit %></a>
+  <% end %>
+

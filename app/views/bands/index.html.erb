@@ -1,0 +1,26 @@
+<h2> Welcome <%= current_user.first_name %> </h2>
+<hr/>
+<%= link_to "|Add Band|", new_band_path %>
+
+<h3> Your Bands</h3>
+
+<table class="highlight">
+  <thead>
+    <tr class="center aligned">
+      <th colspan="4">
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bands.each_with_index do |band, index| %>
+      <tr class="center aligned">
+        <td> <%= (index+1) %> </td>
+        <td> <%= band.name %> </td>
+        <td> <%= band.genre %> </td>
+        <td> <%= link_to "Edit", edit_band_path(band) %> </td>
+        <td> <%= link_to "Remove", band_path(band), method: :delete %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

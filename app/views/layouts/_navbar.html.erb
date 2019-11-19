@@ -1,0 +1,20 @@
+<nav class="red darken-4">
+    <div class="nav-wrapper">
+      <%= link_to "Bands", bands_path, class: "brand-logo" %>
+      <a href="#" class="brand-logo">Bands</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user %>
+          <li>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'Sign In', new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to 'Register', new_user_registration_path  %>
+          </li>
+        <%end%>
+      </ul>
+    </div>
+  </nav>
